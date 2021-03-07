@@ -1,0 +1,30 @@
+<h1 class="text-center">Detalles del Artista</h1>
+<h2 class="text-center mb-5"> <%= @group.name %> </h2>
+
+<table class="table border">
+    <thead class="table-primary text-center">
+        <th>Nombre</th>
+        <th>Conciertos de este mes</th>
+        <th>Último concierto</th>
+        <th>Fecha</th>
+        <th>Máxima audiencia</th>
+        <th>Máxima duración de un concierto</th>
+    </thead>
+
+    <%# <% byebug %>
+    
+    <% if @last_month_concerts.count < 1 %>
+        <h2 class="mb-4 text-danger">Este artista aún no registra conciertos</h2>
+    <% else %>
+        <tbody class="bg-light">
+            <tr>
+                <td><%= @group.name %></td>
+                <td class="text-center border"><%= @last_month_concerts.count %></td>
+                <td><%= @last_month_concerts[0].name %></td>
+                <td class="text-center border"><%= (@last_month_concerts[0].event_date).strftime("%Y-%B-%A") %></td>
+                <td class="text-center"><%= @max_audience[0].audience %></td>
+                <td class="text-center border"><%= @max_duration[0].duration.strftime("%H:%M")%> Hrs</td>
+            </tr>
+        </tbody>
+    <% end %>
+</table>

@@ -1,0 +1,28 @@
+<h1 class="text-center mb-4">Conciertos</h1>
+
+<table class="table border">
+    <thead class="table-primary text-center">
+        <tr>
+            <th class="border">Concierto</th>
+            <th class="border">Duración</th>
+            <th class="border">Audiencia</th>
+            <th class="border">Fecha</th>
+            <th class="border">Acciones</th>
+        </tr>
+    </thead>
+
+    <tbody class="bg-light">
+        <% @concerts.each do |f| %>
+            <tr>
+                <td> <%= f.name%> </td>
+                <td class="text-center border"> <%= f.duration.strftime("%H:%M") %> </td>
+                <td class="text-center"> <%= f.audience %> </td>
+                <td class="text-center border"> <%= f.event_date.strftime("%F %H:%M") %> </td>
+                <td class="text-center">
+                    <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_concert_path(f.id), class:"btn btn-warning" %></td>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+
+</table>

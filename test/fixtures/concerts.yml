@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  duration: 2021-02-12 10:48:24
+  audience: 1
+  event_date: 2021-02-12
+
+two:
+  name: MyString
+  duration: 2021-02-12 10:48:24
+  audience: 1
+  event_date: 2021-02-12
